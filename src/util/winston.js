@@ -24,7 +24,7 @@ const logger = winston.createLogger({
   level,
   silent,
   defaultMeta: {
-    service: 'notifications-forwarder',
+    service: 'cron job scheduler',
     version: '1.0.0',
   },
   transports: [
