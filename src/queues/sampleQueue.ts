@@ -10,8 +10,7 @@ const myQueue = new Queue('Teldaqueue', {
 export const scheduleJobs = (config: any) => {
     Object.keys(config).forEach(async (key) => {
         const job = config[key]
-        console.log("freq: ", job.frequency)
-        await myQueue.add(key, {
+        await myQueue.add(key, {}, {
             repeat: {
                 pattern: job.frequency,
             },
