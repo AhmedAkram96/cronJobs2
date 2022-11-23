@@ -22,9 +22,9 @@ export const myWorker = new Worker('Teldaqueue', async (job) => {
 myWorker.on('completed', (job: Job, returnvalue: any) => {
     // Do something with the return value.
     const date = new Date(job.timestamp).timeNow()
-    console.log(`${job.name} with id ${job.id} is executed at ${date}`)
+    logger.info(`${job.name} with id ${job.id} is executed at ${date}`)
 });
 
 myWorker.on('error', err => {
-    console.error(err);
+    logger.error(err);
 });

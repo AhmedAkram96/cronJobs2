@@ -1,6 +1,6 @@
 import winston from 'winston';
 
-let environment = "proudction"
+let environment = "production"
 let level;
 let silent;
 
