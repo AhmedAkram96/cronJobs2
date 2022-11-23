@@ -1,7 +1,7 @@
 export const config = {
     //Example for a job that's scheduled frequently
     receiveMoney: {
-        frequency: "*/20 * * * * *",
+        frequency: "* * * * * *",
         handler: "../handlers/receiveMoney",
         singleRun: true
     },

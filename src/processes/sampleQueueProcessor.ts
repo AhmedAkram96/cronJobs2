@@ -6,19 +6,16 @@ import Logger from '../util/winston';
 
 const logger = new Logger(module);
 
-export const myWorker = new Worker('myqueue', async (job) => {
+export const myWorker = new Worker('Teldaqueue', async (job) => {
     const handler = (await import('../handlers')).default
     const jobName: string = job.name;
     handler[`${jobName}` as keyof handlers]();
-},
-    {
-        connection: {
-            host: process.env.REDIS_HOST,
-            port: +process.env.REDIS_PORT!
-        }
+}, {
+    connection: {
+        host: process.env.REDIS_HOST,
+        port: +process.env.REDIS_PORT!
     }
-);
-myWorker.concurrency = 5;
+});
 
 
 
